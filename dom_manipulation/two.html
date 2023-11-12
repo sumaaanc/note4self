@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create new element</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+</body>
+<script>
+    const newDiv = document.createElement('div')
+    newDiv.innerHTML = "this is the new element from js"
+    document.body.appendChild(newDiv)
+
+    function newBtn (text, color){
+        const button = document.createElement('button');
+        button.innerHTML = text;
+        button.style.backgroundColor = color;
+        document.body.appendChild(button)
+
+    }
+    newBtn('click me', 'blue')
+</script>
+</html>
