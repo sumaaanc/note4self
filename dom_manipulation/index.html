@@ -32,5 +32,16 @@
         <li>Ramos</li>
     </ul>
     <script src="one.js"></script>
+
+    <script>
+        document.body.onload = newBtn;
+        let pass = document.querySelector('#psw')
+        function newBtn(){
+            const newButton = document.createElement('button');
+            newButton.style.backgroundColor = 'blue';
+            newButton.innerText = "Login";
+            document.body.insertBefore(newButton, pass);
+        }
+    </script>
 </body>
 </html>
