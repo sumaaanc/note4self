@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adding into dom</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="languages">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //to add the languages in the list 
+    function addLan(...language){
+        language.forEach((item)=>{
+            const listCreate = document.createElement('li');
+            listCreate.innerHTML = `${item}` ;
+            document.querySelector('.languages').appendChild(listCreate)    
+        })  
+    }
+    addLan('python', 'ruby', 'c++')
+
+</script>
+</html>
