@@ -19,7 +19,30 @@
             document.querySelector('.languages').appendChild(listCreate)    
         })  
     }
-    addLan('python', 'ruby', 'c++')
+    //addLan('python', 'ruby', 'c++')
+
+    //the above function works fine but can be optimized so the node traversal can be reduced 
+     
+    function addLanOptimized(...language){
+        language.forEach((item)=>{
+            const listCreate = document.createElement('li');
+            listCreate.appendChild(document.createTextNode(`${item}`))
+            document.querySelector('.languages').appendChild(listCreate)    
+        })  
+    }
+
+    addLanOptimized('php', 'ruby on rails', 'c#')
+
+    //to edit the existing content 
+
+    const selectedLi = document.querySelector('li:nth-child(2)')
+    const replaceLi = document.createElement('li');
+    replaceLi.textContent = "Java";
+    selectedLi.replaceWith(replaceLi);
+
+    //to remove 
+    const removeLi = document.querySelector('li:last-child');
+    removeLi.remove();
 
 </script>
 </html>
