@@ -39,6 +39,10 @@
     const replaceLi = document.createElement('li');
     replaceLi.textContent = "Java";
     selectedLi.replaceWith(replaceLi);
+    
+    //edit in other way
+    const listLi = document.querySelector('li:first-child');
+    listLi.outerHTML = "<li>TypeScript</li>"
 
     //to remove 
     const removeLi = document.querySelector('li:last-child');
