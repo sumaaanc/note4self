@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events handeling</title>
+    <style>
+        .containers{
+            display: flex;
+            justify-content: space-around;
+        }
+        #one, 
+        #two,
+        #three,
+        #four,
+        #five{
+            height: 200px;
+            width: 150px;
+            background-color: #41414141;
+            color: black;
+            border: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="containers">
+        <div id="one">FIRST</div>
+        <div id="two">SECOND</div>
+        <div id="three">THIRD</div>
+        <div id="four">FOURTH</div>
+        <div id="five">FIFTH</div>  
+    </div>
+
+    <script>
+
+        //concept of event propagation, event bubbling, event capture
+
+        const contain = document.querySelector('.containers');
+        contain.addEventListener('click', function(e){
+            console.log(e)
+            const removeIt = e.target;
+            if(!(e.target.className == "containers")){
+                removeIt.remove();
+            } 
+        }, false)   
+    </script>
+</body>
+</html>
