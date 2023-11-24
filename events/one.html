@@ -16,13 +16,13 @@
         #five{
             height: 200px;
             width: 150px;
-            background-color: #41414141;
+            background-color: wheat;
             color: black;
             border: 4px;
         }
     </style>
 </head>
-<body>
+<body style="background-color: #212121;">
     <div class="containers">
         <div id="one">FIRST</div>
         <div id="two">SECOND</div>
@@ -35,14 +35,33 @@
 
         //concept of event propagation, event bubbling, event capture
 
+        //EVENT PROPAGATION MEANS BUBBLING UP TO PARENT ELEMENTS OR CAPTURING DOWN TO CLILD ELEMENTS
         const contain = document.querySelector('.containers');
         contain.addEventListener('click', function(e){
-            console.log(e)
             const removeIt = e.target;
             if(!(e.target.className == "containers")){
                 removeIt.remove();
+                console.log('item removed')
             } 
-        }, false)   
+        }, false)  
+        
+        document.querySelector('#five').addEventListener('click', function(e){
+            console.log("fifth div is clicked");
+            
+        }, false)
+
+        //EVENT BUBBLING IS DEFAULT CONDITION -> FALSE PARAMETER IN THE addEventListener method
+        //EVENT CAPTURE CAN BE ACHEIVED -> TRUE PARAMETER IN THE addEventListener method
+        
+        //we can stop the event propagation explicitly -> 
+        //stopPropagation()-> prevents propagation of same event from being called 
+
+        document.querySelector('#three').addEventListener('click', function(e){
+            console.log("third div is clicked");
+            e.stopPropagation();  //stops event bubbling up or capture down
+            
+        }, false)
+
     </script>
 </body>
 </html>
