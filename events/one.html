@@ -58,6 +58,7 @@
 
         document.querySelector('#three').addEventListener('click', function(e){
             console.log("third div is clicked");
+            console.log(e.timeStamp);  //when event was triggered
             e.stopPropagation();  //stops event bubbling up or capture down
             
         }, false)
