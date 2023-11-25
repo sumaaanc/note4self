@@ -47,7 +47,6 @@
         
         document.querySelector('#five').addEventListener('click', function(e){
             console.log("fifth div is clicked");
-            
         }, false)
 
         //EVENT BUBBLING IS DEFAULT CONDITION -> FALSE PARAMETER IN THE addEventListener method
@@ -55,6 +54,7 @@
         
         //we can stop the event propagation explicitly -> 
         //stopPropagation()-> prevents propagation of same event from being called 
+
 
         document.querySelector('#three').addEventListener('click', function(e){
             console.log("third div is clicked");

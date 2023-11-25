@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web APIs</title>
+</head>
+<body>
+    <h1 class="main-title">WEB APIS</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+
+    <script>
+        let interval ;
+        function start(){
+           interval = setInterval(function(){
+                console.log("startedd......")
+            }, 1000)
+        }
+        
+        function stop(){
+             clearInterval(interval);
+             console.log('stopped..........')
+        }
+
+        document.querySelector('#start').addEventListener('click', start, false)
+        document.querySelector('#stop').addEventListener('click', stop, false)
+    </script>
+</body>
+</html>
