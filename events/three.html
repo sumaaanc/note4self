@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Color changer</title>
+</head>
+<body>
+    <h1>Click start to change bg continiously and stop to stop on it</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    const startBtn = document.querySelector('#start')
+    const stopBtn = document.querySelector('#stop')
+
+    const body = document.querySelector('body')
+
+    const colors = ['#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33C7'];
+
+    let intervalId ;
+
+    function changeColor(){
+        intervalId = setInterval(function(){
+            let random = parseInt(Math.random() * colors.length)
+            body.style.backgroundColor = colors[random] ;
+        }, 1000)
+    }
+
+    function stopColorChange(){
+        clearInterval(intervalId)
+        
+    }
+
+    startBtn.addEventListener('click', changeColor)
+    stopBtn.addEventListener('click', stopColorChange)
+</script>
+</html>
