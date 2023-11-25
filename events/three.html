@@ -13,17 +13,24 @@
 <script>
     const startBtn = document.querySelector('#start')
     const stopBtn = document.querySelector('#stop')
-
     const body = document.querySelector('body')
-
-    const colors = ['#FF5733', '#33FF57', '#5733FF', '#33FFFF', '#FF33C7'];
 
     let intervalId ;
 
+    function randomColorGenerate(){
+        let hexValue = '0123456789ABCDEF'
+        let color = '#'
+        for(let i = 0; i < 6; i++){
+            color += hexValue[parseInt(Math.random() * 16)]  //parseInt basically converts the floating point value into a integer. math.floor or math.celi can also be used based on use case
+        }
+        return color;
+    }
+
+
     function changeColor(){
         intervalId = setInterval(function(){
-            let random = parseInt(Math.random() * colors.length)
-            body.style.backgroundColor = colors[random] ;
+            let colorval = randomColorGenerate();  
+            body.style.backgroundColor = colorval;
         }, 1000)
     }
 
