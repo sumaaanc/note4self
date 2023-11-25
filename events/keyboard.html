@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key events</title>
+</head>
+<body>
+    <h1>PRESS any key</h1>
+    <div class="insert"></div>
+
+<script>
+    const insert = document.querySelector('.insert')
+
+    window.addEventListener('keydown', (event)=>{
+        insert.innerHTML = `
+        <table>
+            <tr>
+            <th>key</th>
+            <th>key code</th>
+            <th>code</th>
+            </tr>
+            <tr>
+            <td>${event.key === " " ? "space" : event.key}</td>
+            <td>${event.keyCode}</td>
+            <td>${event.code}</td>
+            </tr>
+        </table>
+        `
+    })
+</script>
+</body>
+</html>
