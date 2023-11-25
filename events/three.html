@@ -28,14 +28,18 @@
 
 
     function changeColor(){
-        intervalId = setInterval(function(){
+        if(!intervalId){
+            intervalId = setInterval(function(){
             let colorval = randomColorGenerate();  
             body.style.backgroundColor = colorval;
         }, 1000)
+        }
+       
     }
 
     function stopColorChange(){
         clearInterval(intervalId)
+        intervalId = null;
         
     }
 
