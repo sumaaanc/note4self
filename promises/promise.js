@@ -68,7 +68,3 @@ promiseThree
 .finally(()=> console.log("this is executed always"))
 
 //there is also .finally which is executed whether the promise is resolved or rejected
-
-
-
-
